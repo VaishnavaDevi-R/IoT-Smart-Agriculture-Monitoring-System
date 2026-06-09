@@ -5,6 +5,11 @@ A Real-Time Smart Agriculture Monitoring System that combines **Live Weather Dat
 The system integrates real-time weather information from OpenWeatherMap, continuously monitors farm conditions, automates irrigation decisions, tracks water consumption, and provides actionable insights through a professional analytics dashboard.
 
 ---
+## 🌐 Live Demo
+
+## 🔗 Live Application
+https://iot-smart-agriculture-monitoring-system-gnwaufwahzeqhzndenkcmw.streamlit.app/
+
 
 ## 🚀 Features
 
