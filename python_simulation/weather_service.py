@@ -1,14 +1,23 @@
 import os
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    import streamlit as st
 
+    api_key = st.secrets["OPENWEATHER_API_KEY"]
+    city = st.secrets["CITY"]
 
-def get_live_weather():
+except Exception:
+
+    from dotenv import load_dotenv
+
+    load_dotenv()
 
     api_key = os.getenv("OPENWEATHER_API_KEY")
     city = os.getenv("CITY", "Chennai")
+
+
+def get_live_weather():
 
     url = (
         f"https://api.openweathermap.org/data/2.5/weather"
