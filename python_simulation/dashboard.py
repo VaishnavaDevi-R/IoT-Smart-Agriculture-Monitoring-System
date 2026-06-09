@@ -23,10 +23,28 @@ st_autorefresh(
 # LOAD DATA
 # ==========================================
 
+import os
+import subprocess
+
+csv_file = "data/sensor_data.csv"
+
+if not os.path.exists(csv_file):
+
+    st.info("🌱 Initializing farm data...")
+
+    subprocess.run(
+        ["python", "main.py"]
+    )
+
 try:
-    df = pd.read_csv("data/sensor_data.csv")
-except FileNotFoundError:
-    st.error("❌ sensor_data.csv not found. Run main.py first.")
+    df = pd.read_csv(csv_file)
+
+except Exception:
+
+    st.error(
+        "Unable to load sensor data."
+    )
+
     st.stop()
 
 if df.empty:
